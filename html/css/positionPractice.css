@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #1a1a2e;
+    color: #eee;
+}
+
+/* ==========================================
+   FIXED — навигация всегда приклеена к верху
+   ========================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(16, 16, 40, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e94560;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #e94560;
+}
+
+/* ==========================================
+   СЕКЦИИ
+   ========================================== */
+.section {
+    padding: 100px 40px 60px;
+    min-height: 100vh;
+}
+
+.section1 {
+    background: linear-gradient(135deg, #0f3460, #16213e);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+}
+
+.section1 p {
+    color: #aaa;
+    font-size: 1.1rem;
+}
+
+.section2 {
+    background: #16213e;
+}
+
+.section3 {
+    background: #1a1a2e;
+}
+
+.section4 {
+    background: linear-gradient(135deg, #533483, #0f3460);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    min-height: 60vh;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #e94560;
+}
+
+/* ==========================================
+   STICKY — заголовок приклеивается под nav
+   ========================================== */
+.sticky-title {
+    position: sticky;
+    top: 70px; /* = высота .navbar */
+    background: rgba(233, 69, 96, 0.95);
+    color: white;
+    padding: 16px 24px;
+    font-size: 1.3rem;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+}
+
+/* ==========================================
+   КАРТОЧКИ
+   ========================================== */
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ccc;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    background: rgba(233, 69, 96, 0.1);
+    border-color: #e94560;
+}

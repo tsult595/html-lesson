@@ -1,0 +1,59 @@
+.FlexGallery {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  padding: 20px 0px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.FlexGalleryCard {
+  flex: 1 1 120px;
+  min-width: 80px;
+  max-width: 200px;
+  color: red;
+  height: 220px;
+  background: #eee;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  transition: flex-basis 0.3s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.FlexGalleryCard.center {
+  flex: 2 1 240px;
+  max-width: 320px;
+  background: #c2f0c2;
+  font-size: 28px;
+  box-shadow: 0 4px 16px rgba(20,168,0,0.15);
+}
+
+.btn{
+    padding: 6px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay{
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: .2s;
+}
+
+.btn:hover .overlay{
+    left: -65px;
+    
+}
+
+
+.text{
+    z-index: 3;
+    position: relative;
+}

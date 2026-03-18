@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="positionPractice.css">
+    <title>Position Practice</title>
+</head>
+<body>
+
+    <!-- FIXED — навигация всегда сверху -->
+    <nav class="navbar">
+        <div class="logo">MyBrand</div>
+        <div class="nav-links">
+            <a href="#section1">Section 1</a>
+            <a href="#section2">Section 2</a>
+            <a href="#section3">Section 3</a>
+        </div>
+    </nav>
+
+    <!-- Секция 1 -->
+    <section class="section section1" id="section1">
+        <h2 class="section-title">Section 1 — Welcome</h2>
+        <p>Этот заголовок "Section 1 — Welcome" — обычный, просто скроллится.</p>
+        <p>Скролль вниз чтобы увидеть sticky в действии ↓</p>
+    </section>
+
+    <!-- Секция 2 — со sticky заголовком -->
+    <section class="section section2" id="section2">
+        <h2 class="sticky-title">Section 2 — Sticky Title 🔒</h2>
+        <div class="cards">
+            <div class="card">Card 1 — Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+            <div class="card">Card 2 — Sed do eiusmod tempor incididunt ut labore et dolore magna.</div>
+            <div class="card">Card 3 — Ut enim ad minim veniam, quis nostrud exercitation ullamco.</div>
+            <div class="card">Card 4 — Duis aute irure dolor in reprehenderit in voluptate velit.</div>
+            <div class="card">Card 5 — Excepteur sint occaecat cupidatat non proident, sunt in culpa.</div>
+            <div class="card">Card 6 — Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</div>
+        </div>
+    </section>
+
+    <!-- Секция 3 — ещё один sticky -->
+    <section class="section section3" id="section3">
+        <h2 class="sticky-title">Section 3 — Another Sticky 🔒</h2>
+        <div class="cards">
+            <div class="card">Card A — Neque porro quisquam est qui dolorem ipsum quia dolor.</div>
+            <div class="card">Card B — Sed quia consequuntur magni dolores eos qui ratione.</div>
+            <div class="card">Card C — Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</div>
+            <div class="card">Card D — Ut enim ad minima veniam, quis nostrum exercitationem.</div>
+            <div class="card">Card E — Quis autem vel eum iure reprehenderit qui in ea voluptate.</div>
+            <div class="card">Card F — At vero eos et accusamus et iusto odio dignissimos.</div>
+        </div>
+    </section>
+
+    <!-- Секция 4 — финал -->
+    <section class="section section4">
+        <h2 class="section-title">Section 4 — The End</h2>
+        <p>Заметь: sticky-заголовки остаются под навигацией, пока их секция видна.</p>
+        <p>Когда секция уходит — sticky уходит вместе с ней.</p>
+    </section>
+
+</body>
+</html>

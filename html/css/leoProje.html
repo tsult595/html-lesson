@@ -9,21 +9,21 @@
 </head>
 <body>
          <div class="p-3 min-h-screen w-full ">
-             <div class="w-[100%] flex items-center justify-between p-4">
-                 <div class="w-[20%]">
+             <div class="w-full flex items-center justify-between p-4">
+                 <div class="w-12">
                   <i class="fa-solid fa-bars"></i>
                  </div>
-                 <div class="flex-1">
+                 <div class="flex-1 flex justify-center">
                      <img src="./logo.033cf4ea.svg" alt="">
                  </div>
-                 <div class="w-[20%]">
+                 <div class="w-12">
                      <select class="border-none" name="" id="">
                          <option value="ru">RU</option>
                          <option value="en">EN</option>
                      </select>
                  </div>
              </div>
-             <div class="p-3 w-full h-auto bg-[linear-gradient(65deg,_#98c7fe_0%,_#a5f6ff_53.48%,_#adfff0_100%),_linear-gradient(185deg,_#b3f9d8_0%,_#e3f5b0_100%),_linear-gradient(58deg,_#ffe7b8_30.98%,_#ffe2b8_66.98%,_#ffbfb8_100.57%)] rounded-3xl md:flex  items-center gap-5 flex-row-reverse">
+             <div class="p-3 w-full h-auto bg-[linear-gradient(65deg,_#98c7fe_0%,_#a5f6ff_53.48%,_#adfff0_100%),_linear-gradient(185deg,_#b3f9d8_0%,_#e3f5b0_100%),_linear-gradient(58deg,_#ffe7b8_30.98%,_#ffe2b8_66.98%,_#ffbfb8_100.57%)] rounded-3xl md:flex  items-center gap-5 flex-row-reverse lg:p-12">
 
                  <div class="w-full md:w-[70%] h-[480px] bg-[url('./mobile_az_2x.webp')] bg-contain bg-no-repeat bg-center mx-auto"></div>
 
@@ -215,35 +215,49 @@
          </div>
          </div>
     <div class="w-full bg-black h-auto p-9 flex flex-col gap-4 items-center">
-      <div>
-        <h3 class="text-3xl font-bold text-white">
-        Rahat mobil tətbiq
-        </h3>
-      </div> 
-      <div>
-        <img src="./author-01.webp" alt="">
-      </div> 
-      <div>
-        <h3 class="text-xl font-bold text-white">
-          Mobil tətbiqimiz ilə rahat əməl edin
-        </h3>
-      </div>
-      <div>
-        <p class="text-white">
-          Leobank tətbiqində qəbzləri skan edin və ƏDV-ni geri qaytarın. <br> Bir toxunuşla və komissiyasız pulu Leo kartınıza köçürə bilərsiniz
-        </p>
-      </div>
-      <div>
-        <button class="bg-white text-black py-2 px-4 rounded-full">Ətrafındakı filiallarda</button>
-      </div>
-        <div class="mt-6 bg-[radial-gradient(circle,_rgba(133,42,121,1)_0%,_rgba(0,0,0,1)_64%)] rounded-2xl p-3">
+       <div class="md:flex justify-around items-center w-full h-auto">
+           <div>
+             <h3 class="text-3xl font-bold text-white">
+             Rahat mobil tətbiq
+             </h3>
+           </div> 
+           <div class="w-[200px] h-[200px]">
+             <img class="w-full h-auto object-contain" src="./author-01.webp" alt="Leobank mobile app">
+           </div> 
+       </div> 
+       
+      <div class="w-full h-auto flex flex-col gap-4
+      md:grid md:grid-cols-2 md:gap-8 md:items-center ">
+        <div class="flex flex-col md:col-start-1 md:row-start-1">
+            <h3 class="text-xl font-bold text-white
+            ">
+              Mobil tətbiqimiz ilə rahat əməl edin
+            </h3>
+            <div>
+                <p class="text-white">
+                    Leobank tətbiqində qəbzləri skan edin və ƏDV-ni geri qaytarın. <br> Bir toxunuşla və komissiyasız pulu Leo kartınıza köçürə bilərsiniz
+                </p>
+            </div>
+            <div class="mt-4">
+                <button class="bg-white text-black py-2 px-4 rounded-full">Ətrafındakı filiallarda</button>
+            </div>
+        </div>
+        <div class="mt-6 bg-[radial-gradient(circle,_rgba(133,42,121,1)_0%,_rgba(0,0,0,1)_64%)] rounded-2xl p-3
+         md:col-start-2 md:row-start-1 md:col-start-1">
         <img src="./mobile_az_1.webp" alt="">
       </div>
-      <div>
-        <h3 class="text-xl font-bold text-white">Bir neçə toxunuşla kartınızı idarə edin 👆</h3>
-        <p class="text-white">PİN kodunuzu və ya İnternet limitinizi dəyişdirin, kartı bloklayın, çıxarış sifariş edin, kartın əlaqələndirildiyi xidmətlərdə ödənişləri bloklayın və ya blokdan çıxarın – bütün bunları bir neçə saniyə ərzində tətbiqinizdə edə bilərsiniz</p>
-        <div class="mt-6 bg-[radial-gradient(circle,_rgba(42,51,133,1)_0%,_rgba(0,0,0,1)_64%)] w-full h-auto rounded-2xl p-3">
-            <img src="./mobile_az_2.webp" alt="">
+    </div>
+    
+
+      <div class="mt-6 flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-8 md:items-center">
+        <div class="flex flex-col gap-2 md:col-start-2 md:row-start-1">
+          <h3 class="text-xl font-bold text-white">Bir neçə toxunuşla kartınızı idarə edin 👆</h3>
+          <p class="text-white">
+            PİN kodunuzu və ya İnternet limitinizi dəyişdirin, kartı bloklayın, çıxarış sifariş edin, kartın əlaqələndirildiyi xidmətlərdə ödənişləri bloklayın və ya blokdan çıxarın – bütün bunları bir neçə saniyə ərzində tətbiqinizdə edə bilərsiniz
+          </p>
+        </div>
+        <div class="mt-6 bg-[radial-gradient(circle,_rgba(42,51,133,1)_0%,_rgba(0,0,0,1)_64%)] w-full h-auto rounded-2xl p-3 md:mt-0 md:col-start-1 md:row-start-1">
+          <img src="./mobile_az_2.webp" alt="">
         </div>
       </div>
       <div class="flex flex-col gap-4">
@@ -253,8 +267,30 @@
         <div class="mt-6 bg-[radial-gradient(circle,_rgba(133,42,121,1)_0%,_rgba(0,0,0,1)_64%)] rounded-2xl p-3">
             <img src="./mobile_az_3.webp" alt="">
         </div>
-        <div>
-       <h3 class="text-xl font-bold text-white">Köçürmələrinizi daha sürətli və daha rahat edən xüsusiyyətlər🔥</h3>
+
+        <h3 class="text-xl font-bold text-white">Köçürmələrinizi daha sürətli və daha rahat edən xüsusiyyətlər🔥</h3>
+        <div class="md:grid grid-cols-3">
+       <div class="mt-8 flex flex-col gap-4">
+           <div class="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center">
+            <i class="fa-solid fa-phone text-white text-lg"></i>
+           </div> 
+           <h4 class="text-white font-bold">Sürətli və rahat köçürmələr</h4>
+              <p class="text-white">Leobank kartlarına köçürmələr 2000 ₼-dək komissiyasızdır. Hətta kredit vəsaitlərindən ödəniş zamanı</p>
+       </div>
+       <div class="mt-8 flex flex-col gap-4">
+           <div class="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center">
+            <i class="fa-solid fa-phone text-white text-lg"></i>
+           </div> 
+           <h4 class="text-white font-bold">Sürətli və rahat köçürmələr</h4>
+              <p class="text-white">Leobank kartlarına köçürmələr 2000 ₼-dək komissiyasızdır. Hətta kredit vəsaitlərindən ödəniş zamanı</p>
+       </div>
+       <div class="mt-8 flex flex-col gap-4">
+           <div class="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center">
+            <i class="fa-solid fa-phone text-white text-lg"></i>
+           </div> 
+           <h4 class="text-white font-bold">Sürətli və rahat köçürmələr</h4>
+              <p class="text-white">Leobank kartlarına köçürmələr 2000 ₼-dək komissiyasızdır. Hətta kredit vəsaitlərindən ödəniş zamanı</p>
+       </div>
        <div class="mt-8 flex flex-col gap-4">
            <div class="w-12 h-12 rounded-full bg-orange-500 flex items-center justify-center">
             <i class="fa-solid fa-phone text-white text-lg"></i>
@@ -279,75 +315,164 @@
         </div>
       </div>
     </div>
-    <div class="bg-white w-full h-[250px] px-6">
+    <div class="bg-white w-full h-auto px-6">
       <div>
         <h3 class="text-3xl font-bold text-left mt-10 mb-4">Tarilfer</h3>
       </div>
       <p>Bizimlə hər şey sadə və sərfəlidir. Və demək olar ki, hər şey komissiyasızdır :)</p>
-      <div class="bg-gray-100 rounded-3xl w-full h-auto mt-5 p-5 flex flex-col items-center justify-center gap-4">
-         <div class="w-full">
+      <div class="bg-gray-100 rounded-3xl w-full h-auto mt-5 p-5 flex flex-col gap-4">
+        <div class="w-full md:flex justify-between items-center">
             <p>Kartin sifariwi</p>
             <p>pulsuzdur</p>
          </div>
-         <hr>
-          <div class="w-full">
+        <div class="w-full md:h-[1px] bg-gray-300"></div>
+         <div class="w-full md:flex justify-between items-center">
             <p>Kartin sifariwi</p>
             <p>pulsuzdur</p>
          </div>
-         <hr>
-          <div class="w-full">
+         <div class="w-full md:h-[1px] bg-gray-300"></div>
+         <div class="w-full md:flex justify-between items-center">
             <p>Kartin sifariwi</p>
             <p>pulsuzdur</p>
          </div>
-         <hr>
-         <div class="w-full">
+         <div class="w-full md:h-[1px] bg-gray-300"></div>
+        <div class="w-full md:flex justify-between items-center">
             <p>Kartin sifariwi</p>
             <p>pulsuzdur</p>
          </div>
       </div>
-      <div>
-        <div>
+
+      <div class="md:grid md:grid-cols-2 md:gap-8 md:items-center mt-10">
+        <div class="md:col-start-1 row-start-1">
             <h3 class="text-2xl font-bold text-left mt-10 mb-4">Qayğıkeş <br> müştəri <br> xidmətləri</h3>
             <p>Əməkdaşlarımız sizə ən yüksək səviyyədə xidmət göstərmək üçün dağları yerindən oynatmağa hazırdırlar! Heç bir robotlar və IVR menyular yoxdur. Sizin üçün əlverişli olan messencerlərdə ünsiyyət qururuq!</p>
         </div>
-        <div class="flex justify-around mt-4">
+        <div class="md:col-start-2 row-start-1 md:grid md:grid-cols-2 md:gap-y-8 md:gap-x-8">
            <div>
                <div class="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center">
                  <i class="fa-brands fa-whatsapp text-white text-lg"></i>
              </div>
-             <p class="text-sm">WhatsApp</p>
+             <p class="text-sm m-3">WhatsApp</p>
                <div class="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center">
                 <i class="fa-brands fa-telegram text-white text-lg"></i>
              </div>
-              <p class="text-sm">Telegram</p>
+              <p class="text-sm m-3">Telegram</p>
            </div> 
            <div>
                  <div class="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center">
-                   <i class="fa-brands fa-instagram text-white text-lg"></i>
+                <i class="fa-brands fa-instagram text-white text-lg"></i>
                </div>
-               <p class="text-sm">Instagram</p>
+               <p class="text-sm m-3">Instagram</p>
                  <div class="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center">
                    <i class="fa-brands fa-facebook-messenger text-white text-lg"></i>
-               </div>
-               <p class="text-sm">Messenger</p>
+                </div>
+                <p class="text-sm m-3">Messenger</p>
            </div>
         </div>
       </div>
-      <div>
-        <h3 class="text-2xl font-bold text-left mt-10 mb-4">Əlaqə</h3>
-        <p>Əgər sizdə hər hansı bir sualınız varsa, bizimlə əlaqə saxlamaqdan çəkinməyin! Biz sizin üçün buradayıq!</p>
-         <div class="flex gap-4 justify-around">
-                <button class="w-[120px] h-[80px]">
-                 <img src="./image.webp" alt="">
-                 </button>
-                <button class="w-[120px] h-[80px]">
-                 <img src="./app-store-az.644498f3.svg" alt="">
-                 </button>
-         </div>
-          <div class="h-[250px] bg-[linear-gradient(0deg,_rgba(238,174,202,1)_0%,_rgba(148,187,233,1)_100%)] p-3 rounded-2xl">
-                <img src="./leo-card-2x.png" alt="">
-         </div>
+
+      <div class="mt-10 flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-8 md:items-center">
+        <div class="flex flex-col gap-4 md:col-start-1 md:row-start-1">
+          <h3 class="text-2xl font-bold text-left">Tətbiqi yükləyin və qara kartınızı əldə edin 🖤</h3>
+          <p>QR kodunu skan edərək bir neçə kliklə kart açın və evə çatdırılma ilə əldə edin!</p>
+          <div class="flex gap-4 justify-start">
+            <button class="w-[120px] h-[80px]">
+              <img src="./image.webp" alt="">
+            </button>
+            <button class="w-[120px] h-[80px]">
+              <img src="./app-store-az.644498f3.svg" alt="">
+            </button>
+          </div>
+        </div>
+        <div class="h-auto bg-[linear-gradient(0deg,_rgba(238,174,202,1)_0%,_rgba(148,187,233,1)_100%)] p-3 rounded-2xl md:col-start-2 md:row-start-1">
+          <img src="./leo-card-2x.png" alt="">
+        </div>
       </div>
     </div>
+    <footer class="w-full h-auto bg-black text-white mt-10 p-5 flex flex-col gap-4 items-start md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-6">
+    <div class="md:col-span-2 md:row-start-1">
+      <img src="./logo-white.243423dc.svg" alt="">
+    </div>
+    <div class="flex flex-col gap-4 md:col-start-1 md:row-start-2">
+            <div>
+              <h4>Mehsular</h4>
+              <h3>EDV geri gaytarmasi</h3>
+              <h3>Referral Programm</h3>
+              <h3>Cashback</h3>
+            </div>
+            <div>
+              <h4>Mehsular</h4>
+              <h3>EDV geri gaytarmasi</h3>
+              <h3>Referral Programm</h3>
+              <h3>Cashback</h3>
+            </div>
+            <div>
+              <h4>Mehsular</h4>
+              <h3>EDV geri gaytarmasi</h3>
+              <h3>Referral Programm</h3>
+              <h3>Cashback</h3>
+            </div>
+            <div>
+              <h4>Mehsular</h4>
+              <h3>EDV geri gaytarmasi</h3>
+              <h3>Referral Programm</h3>
+              <h3>Cashback</h3>
+            </div>
+         </div>
+        <div class="md:col-start-2 md:row-start-2">
+            <h4>Destek Xidmeti</h4>
+            <div class="flex justify-between gap-5 mt-4">
+             <div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center">
+                   <i class="fa-brands fa-facebook-messenger text-white text-lg"></i>
+            </div>
+             <div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center">
+                   <i class="fa-brands fa-facebook-messenger text-white text-lg"></i>
+            </div>
+             <div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center">
+                   <i class="fa-brands fa-facebook-messenger text-white text-lg"></i>
+            </div>
+             <div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center">
+                   <i class="fa-brands fa-facebook-messenger text-white text-lg"></i>
+            </div>
+            </div>
+            <div>
+                <div class="mt-4">
+                    <h4>Azeri</h4>
+                    <p>773</p>
+                </div>
+                <div class="mt-4">
+                    <h4>Azeri</h4>
+                    <p>+779 12 565655</p>
+                </div>
+                <div class="flex justify-between mt-4">
+                   <i class="fa-brands fa-facebook-messenger text-white text-lg"></i> 
+                   <i class="fa-brands fa-facebook-messenger text-white text-lg"></i> 
+                   <i class="fa-brands fa-facebook-messenger text-white text-lg"></i> 
+                   <i class="fa-brands fa-facebook-messenger text-white text-lg"></i> 
+                </div>
+            </div>
+         </div>
+    </footer>
 </body>
 </html>
+
+
+       <!-- <div class="bg-yellow-100 mt-10 rounded-3xl bg-gray-200 p-3 flex flex-col justify-center gap-5 md:flex-row md:items-center md:gap-5">
+            <div class="md:w-1/2 flex flex-col gap-4">
+                <h3 class="text-3xl font-bold">Ayda 15 000 ₼-dək kredit limiti</h3>
+
+                <div class="md:hidden">
+                  <img src="./image (1).webp" alt="">
+                </div>
+
+                <p>Kreditdən 62 günədək komissiyasız istifadə edə bilərsiniz. Kreditlə bağlı qərar tətbiqdə qeydiyyat zamanı lazımsız suallar və sənədlər olmadan qəbul edilir</p>
+
+                <button class="w-full h-12 bg-black text-white mt-2 rounded-3xl">
+                    Kart sifariş edin
+                </button>
+            </div>
+
+            <div class="hidden md:block md:w-1/2">
+                <img src="./image (1).webp" alt="">
+            </div>
+          </div> -->

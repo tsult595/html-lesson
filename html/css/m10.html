@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white w-full h-auto">
+       <div class="px-3 flex items-center justify-end lg:hidden">
+        <div class="w-[50%] flex justify-between items-center">
+            <div class="pt-1">
+            <img src="./68dae2efcee6be6906b71ebc_m10.svg" alt="">
+            </div>
+            <button type="button" aria-label="Open menu" class="lg:hidden">
+            <i class="fa-solid fa-bars text-1xl"></i>
+             </button>
+        </div>
+       </div> 
+    </header>
+    <div class="p-3 pt-[70px] lg:pt-2">
+        <div id="sliderImage" class="flex flex-col gap-3 px-10 py-16 rounded-3xl
+         bg-[url('./mini.png')]
+         xl:bg-[url('./big.png')]
+         bg-cover bg-center h-[480px] relative md:h-[700px] lg:h-[760px] lg:py-4">
+         <div class="hidden text-white lg:flex items-center justify-between text-2xl font-bold lg:block">
+            <div>
+             <img src="./m10-white.svg" alt="">
+            </div>
+               <div class="flex">
+                <span class="flex gap-4">
+                 <a href="" class="hover:bg-blue-600 px-4 py-2 rounded-lg">Ətraflı</a>
+                </span>
+                <span class="flex gap-4">
+                 <a href="" class="hover:bg-blue-600 px-4 py-2 rounded-lg">Ətraflı</a>
+                </span>
+                <span class="flex gap-4">
+                 <a href="" class="hover:bg-blue-600 px-4 py-2 rounded-lg">Ətraflı</a>
+                </span>
+               </div>
+               <option value="">
+                   <select name="" id="">AZ</select>
+               </option>
+         </div>
+             <div class="flex">
+                 <div id="subImage" class="absolute inset-0 left-6 md:left-[18.7%] md:bottom-[-7%] lg:left-[-1%] lg:bottom-[-1%] xl:left-[-1%] xl:bottom-[-1%]">
+                 <img class="w-full h-full object-cover" src="./bus.svg" alt="">
+                 </div>
+                    
+                <img onclick="leftClick()" class="w-10 h-10 absolute left-2 top-1/2 " src="./icon_chevron_left_stroke.svg" alt="">
+                <div class="flex flex-col gap-4 md:gap-14 items-center justify-center mx-auto">
+                <h1 id="sliderTitle" class="text-4xl text-center font-bold text-white md:text-6xl xl:mt-5">Nəqliyyatı m10-la ödə</h1>
+                <span><a href="" class="text-white font-bold px-4 py-2 rounded-lg hover:bg-blue-600">Ətraflı</a></span>
+                </div>
+                <img onclick="rightClick()" class="w-10 h-10 absolute right-2 top-1/2 " src="./icon_chevron_right_stroke.svg" alt="">
+                 <div class="w-30 flex gap-4 mx-auto absolute bottom-5 left-1/2">
+                    <div onclick="picker(0)" class="w-3 h-3 rounded-full bg-white"></div>
+                    <div onclick="picker(1)" class="w-3 h-3 rounded-full bg-white"></div>
+                    <!-- <div onclick="picker(2)" class="w-3 h-3 rounded-full bg-white"></div> -->
+                 </div>
+             </div>
+        </div>
+    </div>
+
+    <div class="p-8 flex flex-col gap-12 bg-[#F4F0EE] md:gap-16 md:p-12 lg:px-[110px] xl:px-[350px]">
+        <h3 class="text-4xl font-bold text-center md:text-5xl">Xidmetler</h3>
+        <div class="grid grid-cols-2 gap-x-5 gap-y-5 md:grid-cols-3 xl:gap-y-8 xl:gap-x-8">
+            <div class="rounded-2xl bg-white p-4 flex flex-col items-center gap-8">
+                <h3>Xidmet 1</h3>
+                <div>
+                    <img src="./bill.svg" alt="">
+                </div>
+            </div>
+            <div class="rounded-2xl bg-white p-4 flex flex-col items-center gap-8">
+                <h3>Xidmet 2</h3>
+                <div>
+                    <img src="./bill.svg" alt="">
+                </div>
+            </div>
+            <div class="rounded-2xl bg-white p-4 flex flex-col items-center gap-8">
+                <h3>Xidmet 3</h3>
+                <div>
+                    <img src="./bill.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col  gap-12 md:gap-20">
+            <h3 class="font-bold text-4xl text-center md:text-5xl">Malliye</h3>
+            <div class="grid grid-cols-2 gap-x-5 gap-y-5 md:grid-cols-3 xl:gap-y-8 xl:gap-x-8">
+             <div class="rounded-2xl bg-white p-4 flex flex-col items-center gap-8">
+                <h3>2500 dek</h3>
+                <div>
+                    <img src="./bill.svg" alt="">
+                </div>
+            </div>
+               <div class="rounded-2xl bg-white p-4 flex flex-col items-center gap-8">
+                <h3>Malliye</h3>
+                <div>
+                    <img src="./bill.svg" alt="">
+                </div>
+            </div>
+             <div class="rounded-2xl bg-white p-4 flex flex-col items-center gap-8">
+                <h3>Malliye</h3>
+                <div>
+                    <img src="./bill.svg" alt="">
+                </div>
+            </div>
+             <div class="rounded-2xl bg-white p-4 flex flex-col items-center gap-8">
+                <h3>Malliye</h3>
+                <div>
+                    <img src="./bill.svg" alt="">
+                </div>
+            </div>
+        </div>
+       </div>
+
+       <div class="bg-blue-200 rounded-3xl p-4 py-20">
+        <div class="flex flex-col gap-8 items-center md:gap-5">
+            <span class="bg-[#2483FE] w-16 h-8 rounded-2xl text-center pt-1">+023</span>
+            <h3 class="text-4xl font-bold text-center">Her Aliwda bonuslar gazan!</h3>
+            <span><a href="" class="px-8 py-3 h-12 flex items-center text-blue-700 rounded-3xl font-semibold">Ətraflı məlumat</a></span>
+       </div>
+        </div>
+
+    </div>
+
+    <div class="bg-white rounded-3xl w-full p-4">
+   <h3 class="text-4xl font-bold text-center mb-8">700 000 nəfər hər gün m10-dan istifadə edir</h3>
+    <div class="flex justify-between gap-5 scrollbar-hide overflow-x-auto pt-20 will-change-transform">
+
+        <div class="flex flex-col items-center justify-center rounded-3xl bg-gray-200 p-8 py-16 relative min-w-[280px]">
+         <div class="absolute top-[-60px]">
+             <img src="./heart.svg" alt="Heart">
+         </div>
+         <div class="flex flex-col gap-3 pt-8">
+         <p class="text-center text-gray-600">Texniki destek</p>
+         <h3 class="text-center font-bold text-lg">24/7 əlaqədəyik — zəng et və ya çatda bizə yaz</h3>
+         <p class="text-blue-700 text-center"><a href="">Ətrafli</a></p>
+         </div>
+        </div>
+        
+        <div class="flex flex-col rounded-3xl bg-gray-200 p-8 py-16 relative items-center justify-center min-w-[280px]">
+         <div class="absolute top-[-60px]">
+         <img src="./heart.svg" alt="Heart">
+         </div>
+         <div class="flex flex-col gap-3 pt-8">
+            <p class="text-center text-gray-600">Texlukeszizlik</p>
+            <h3 class="text-center font-bold text-lg">Səndən başqa heç kim pulqabına giriş əldə edə bilməz</h3>
+            <p class="text-blue-700 text-center"><a href="">Ətrafli</a></p>
+         </div>
+        </div>
+
+        <div class="flex flex-col rounded-3xl bg-gray-200 p-8 py-20 relative items-center justify-center min-w-[480px] relative">
+        <img class="absolute right-[-170px] top-[-70px]" src="./man.svg" alt="">
+         <div class="flex flex-col justify-center items-center gap-5">
+            <img src="./lavr-rate.svg" alt="">
+            <h3 class="text-3xl font-bold">Lavr Rate</h3>
+            <img src="./stars-rate.svg" alt="">
+            <p class="text-center text-gray-600">yukleme</p>
+         </div>
+        </div>
+    </div>
+
+  </div>
+
+   <div class="flex flex-col justify-center items-center gap-12 w-full bg-gray-100 p-4 py-12">
+
+       <div class="flex flex-col gap-12">
+         <h3 class="text-4xl font-bold text-center md:text-5xl">Pul məsələlərini sadələşdiririk</h3>
+         <div class="flex gap-4 justify-center">
+            <button class="px-5 py-3 h-12 bg-black text-white rounded-3xl font-semibold">Odeniwler</button>
+            <button class="px-5 py-3 h-12 border border-black bg-transparent text-black rounded-3xl font-semibold">Kocurmeler</button>
+         </div>
+         <div class="px-16 lg:px-32 xl:px-48">
+            <img class="w-4/5 md:w-3/4 lg:w-2/3 mx-auto" src="./image (1).webp" alt="">
+         </div>
+       </div>
+
+       <div class="flex flex-col gap-12">
+        <h3 class="text-4xl font-bold text-center md:text-5xl">Biz Bir ekosisteminin bir hissəsiyik</h3>
+        <div class="h-auto w-full relative">
+            <img class="w-full md:px-20" src="./all members.svg" alt="">
+            <div class="inset-0 bg-white bg-opacity-40 absolute"></div>
+        </div>
+       </div>
+
+       <div class="flex flex-col gap-9 md:w-full md:px-20 lg:px-32 xl:px-60">
+        <h3 class="text-4xl font-bold text-center md:text-5xl">Tez Tez verilen suallar</h3>
+        <div class="flex flex-col gap-5">
+        <div onclick="opener()" id="faq1" class= "flex flex-col bg-gray-200 rounded-2xl p-3 cursor-pointer">
+            <div class="flex items-center justify-between">
+                 <!-- <img src="./m10.svg" alt=""> -->
+                <h3 class="font-bold text-1xl">m10 tətbiqində necə qeydiyyatdan keçim?</h3>
+                <img src="./icon_chevron_right_stroke.svg" alt="">
+            </div>
+            <p id="p" class="text-gray-600 max-h-0 overflow-hidden transition-all duration-500">m10 tətbiqində qeydiyyatdan keçmək üçün...</p>
+       </div>
+        <div onclick="opener()" id="faq1" class= "flex flex-col bg-gray-200 rounded-2xl p-3 cursor-pointer">
+            <div class="flex items-center justify-between">
+                 <!-- <img src="./m10.svg" alt=""> -->
+                <h3 class="font-bold text-1xl">m10 tətbiqində necə qeydiyyatdan keçim?</h3>
+                <img src="./icon_chevron_right_stroke.svg" alt="">
+            </div>
+            <p id="p" class="text-gray-600 max-h-0 overflow-hidden transition-all duration-500">m10 tətbiqində qeydiyyatdan keçmək üçün...</p>
+       </div>
+        </div>
+      </div>
+   </div> 
+
+   <div class="flex flex-col justify-center items-center gap-10 p-16 bg-black rounded-t-3xl lg:gap-10">
+   <div class="flex justify-center items-center lg:py-[100px]">
+    <img src="./m10 logo.svg" alt="m10 Logo">
+</div>
+  <div>
+    <h3 class="text-white text-4xl font-bold lg:hidden">m10 Yukle</h3>
+    <h3 class="text-white text-4xl font-bold hidden lg:block lg:text-5xl">Tətbiqi yükləmək üçün skan et</h3>
+  </div>
+    <div class="flex justify-center items-center gap-5">
+        <img src="./Store download button-1.svg" alt="m10 Logo">
+        <img src="./Store download button-1.svg" alt="m10 Logo">
+    </div>
+  </div>
+  <div class="bg-gray-400 h-[1px] w-full"></div>
+  <div class="flex flex-col gap-12 bg-black gap-10 p-9">
+    <div class="flex justify-between">
+     <i class="fa-brands fa-facebook-messenger text-white text-lg"></i> 
+     <i class="fa-brands fa-facebook-messenger text-white text-lg"></i> 
+     <i class="fa-brands fa-facebook-messenger text-white text-lg"></i>
+     <i class="fa-brands fa-facebook-messenger text-white text-lg"></i>
+     <i class="fa-brands fa-facebook-messenger text-white text-lg"></i>
+    </div>
+  </div>
+    <script src="./m10.js"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+
+    <input id="inp1" value="privet" type="text">
+    <button onclick="values()">Click me!</button>
+    <input value="ewe raz privet" id="inp2" type="text">
+    <button onclick="value2()">Click me</button>
+    <input value="poka" id="inp3" type="text">
+    
+   
+    <div class="w-[55%] border border-1 m-auto mt-5 flex flex-col items-center justify-center gap-5">
+     <h1>Messaje</h1>
+     <input id="msgInput" class="border-2 focus-blue" type="text">
+     <button onclick="showMessage()" class="bg-black text-white py-2 px-4 rounded-full">Submit</button>
+     <p class="text-red font-bold" id="msgOutput">Catdirildi</p>
+     <p id="text"></p>
+    </div>
+   
+    <script>
+       
+
+      const showMessage= (e)=>{
+       let input = document.getElementById('msgInput')
+       let val = document.getElementById('text')
+       val.textContent = input.value 
+      }
+       
+
+        let a = document.getElementById('inp1')
+        let b = document.getElementById('inp2')
+        let d = document.getElementById('inp3')
+        let co
+        let ro 
+    
+    const values = function(){
+      co = a.value
+      a.value = b.value
+      b.value = co
+    }
+
+    const value2 = function(){
+      ro = a.value
+      a.value = d.value 
+      d.value = ro
+    }
+       
+      
+        
+const checkSeason = function(month) {
+  if (['october', 'november', 'december', 'yanvar'].includes(month)) {
+    return console.log('giw');
+  } else if (['fevr', 'mart', 'aprel'].includes(month)) {
+    return console.log('yaz');
+  } else if (['june', 'july', 'avgust'].includes(month)) {
+    return console.log('yay');
+  } else if (month === 'sentabr') {
+    return console.log('payiz');
+  }else {
+    return console.log('bele bir ay yoxdur');
+  }
+ }
+
+console.log(checkSeason('mart'));
+
+ const maxNumb = function(a,b,c,d){
+  if(a > b){
+   return b
+  }else if(c > d){
+   return d 
+  }
+ }
+
+ console.log(maxNumb(5,10,3,1));
+
+
+let aa = [1,5,10,38,75]
+
+let red = aa.reduce((acc , num)=> acc > num ? acc : num)
+
+console.log(red);
+
+
+ const time = function(){
+   return new Date().toLocaleDateString()
+    
+ }
+console.log(time());
+
+let arr = [1,5,3,2,7,1,10]
+ const arrok = function(arr){
+ let newArr = []   
+ for (let index = arr.length -1; index >= 0; index--) {
+  newArr.push(arr[index]);
+ }
+  return newArr
+ }
+
+console.log(arrok(arr));
+ 
+
+
+const sum = function(arr){
+ let min = []
+ for (let index = 0; index < arr.length; index++) {
+    if(arr[index] < min){
+     arr[index].push(min)
+    }
+    return min 
+ }
+}
+
+console.log(sum([[2,5,3,2,7,1,10]]));
+
+const minn = function(arr){
+  let min = arr[0]
+  arr.forEach(element => {
+    if(element < min){
+     min = element
+    
+    }
+});
+  return min
+}
+
+console.log(minn([2,5,3,2,7,1,10]));
+
+const maxx = function(arr){
+  let max = arr[0]
+  arr.forEach(element=>{
+    if(element > max){
+     max = element
+    }
+})
+  return max 
+}
+
+const summik = function(arr){
+  let sum = 0
+  arr.forEach(element=>{
+    sum += element
+  })
+  return sum 
+}
+
+console.log(summik([5,5,5,5]));
+
+console.log(maxx([2,5,3,2,7,1,10]));
+
+
+
+
+
+let obj = { a: 1, b: 2, c: 3 };
+
+// for...in — для объектов:
+for (let key in obj) {
+  console.log(key, obj[key]);
+}
+
+
+const maximus = function(arr){
+    let maxx = arr[0]
+    arr.forEach(el=>{
+        if(el > maxx){
+         maxx = el 
+        }
+    })
+    return maxx
+}
+        
+ console.log(maximus([5,10,3, 500]));
+
+const minim = function(arr){
+  let min = arr[0];
+  arr.forEach(elem=>{
+    if(elem < min){
+      min = elem 
+    }
+  })
+  return min
+} 
+
+console.log(minim([5,10,3,500]));  
+
+const summikos = function(arr){
+  let sumik = arr[0]
+  arr.forEach(elem=>{
+   sumik += elem
+  })
+  return sumik
+}
+
+console.log(summikos([5,10,3,500])); 
+
+
+      
+    </script>
+    <script src="./app.js"></script>
+</body>
+</html>

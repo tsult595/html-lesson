@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input placeholder="img" id="img" type="text">
+        <input placeholder="h3" type="text" name="" id="h3">
+        <input placeholder="p" type="text" name="" id="p">
+        <input placeholder="btn" type="number" id="btn">
+        <button class="bg-blue p-4" onclick="creator()" id="btn">create</button>
+
+        <div id="div"></div>
+
+    </div>
+    <script>
+        let img = document.querySelector('#img')
+        let h3 = document.querySelector('#h3')
+        let p = document.querySelector('#p')
+        let btn = document.querySelector('#btn')
+        let div = document.querySelector('#div')
+
+        function creator() {
+        if (img.value === '' || h3.value === '' || p.value === '' || btn.value === '') {
+        return
+        }   
+        div.innerHTML += `
+        <div id="div" class="w-[250px] h-[250px] bg-gray-200 rounded-2xl flex flex-col">
+         <img class="w-100 h-[50%]" src="${img.value}" alt="">
+        <h3 class="text-2xl font-bold">${h3.value}</h3>
+        <p>${p.value}</p>
+        <button  class="p-4 bg-blue-500">${btn.value}</button>
+        </div>
+       `
+            img.value = ''
+            h3.value = ''
+            p.value = ''
+            btn.value = ''
+
+        }
+    </script>
+</body>
+
+</html>

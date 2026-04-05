@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col justify-center items-center bg-blue-100 gap-5">
+    <button onclick="fontChanger('bold')" class="p-5 bg-blue-400">B</button>
+    <button onclick="fontChanger('italic')" class="p-5 bg-blue-400">I</button>
+    <button onclick="fontChanger('underline')" class="p-5 bg-blue-400">U</button>
+    <input id="inp" onchange="fontChanger('color', this)" class="w-20 h-16" type="color">
+     <p id="result">Teymur</p>
+
+     
+     <p id="more"></p>  
+     <input  id="inp1" type="number"> 
+     <button onclick="dahaCox()">></button> 
+     <input  id="inp2" type="number"> 
+
+     <input id="yoxla" type="number">
+     <button onclick="yoxla()">yoxla</button>
+     <p id="yoxlaP"></p>
+
+     <p id="enBoyukP"></p>
+     <p id="enBalacaP"></p>
+     <input id="one" type="number">
+     <p>></p>
+     <input id="two" type="number">
+     <p><</p>
+     <input id="three" type="number">
+     <button onclick="yoxlaTwo()" id="yoxl">yoxla</button>
+
+        <p>telebe</p>
+        <input  type="text" name="" id="adiInput">
+        <p>qiymeti</p>
+        <input type="number" name="" id="qiymetInput">
+        <button onclick="yoxlaQiymet()">yoxla</button>
+        <p id="qiymetP"></p>
+      
+        <input id="textinp" type="text" oninput="showText()">
+        <p id="testP"></p>
+
+        <p></p>
+
+    </div>
+    <script src="./calculator.js"></script>
+</body>
+</html>

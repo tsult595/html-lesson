@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+@keyframes fall {
+  0% {
+    top: -20px;
+    left: var(--start-left);
+  }
+  20% {
+    top: 20vh;
+    left: calc(var(--start-left) + 20px);
+  }
+    50% {
+        top: 40vh;
+        left: calc(var(--start-left) - 20px);
+    }
+  100% {
+    top: 100vh;
+    left: calc(var(--start-left) - 60px);
+  }
+}
+.animate-fall {
+  animation: fall 7s linear infinite;
+  position: absolute;
+}
+    </style>
+    <div class="min-h-screen bg-blue-400 relative flex items-center justify-center">
+
+    <div class="w-[50%] h-[40%] bg-white flex flex-col items-center justify-center rounded-3xl p-12 gap-6">
+    <h1 class="text-2xl">To Do List</h1>
+     <input id="inp" placeholder="place here" class="w-[80%] h-12 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 p-5" type="text">
+     <button onclick="todo()" class="w-[80%] h-12 bg-blue-500 text-white rounded-2xl hover:bg-blue-600">Add Task</button>
+     <ul id="ul" class="w-[80%] h-full flex flex-col gap-4 overflow-y-auto">
+       
+    </ul>
+     </div>
+     <div onmouseover="runs()" id="run" class="w-20 h-20 flex items-center justify-center absolute">
+         <button class="p-3 bg-yellow-200">ccc</button>
+     </div>
+     <div id="snowFlakeContainer" class="inset-0 absolute z-50 overflow-hidden pointer-events-none">
+    </div>
+</div>
+    <script src="./jsSnow.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <div id="dragTo" class="min-h-screen flex flex-col justify-center items-center bg-blue-200 gap-10">
+            <div class="w-[50%] rounded-2xl bg-white flex flex-col items-center gap-12 p-4">
+            <h3 class="text-3xl font-bold">To DO</h3>
+            <input id="inp" placeholder="place here" class="w-[80%] h-12 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 p-5" type="text">
+            <button id="btn" onclick="toDo()" class="w-[80%] h-12 bg-blue-500 text-white rounded-2xl hover:bg-blue-600">Add Task</button>
+          <ul id="ul" class="w-[80%] h-full flex flex-col gap-4 overflow-y-auto">
+          </ul>
+        </div>
+        <!-- <div id="dragItem" draggable="true" class="w-20 h-20 bg-blue-600 flex items-center justify-center absolute left-6">ggg</div> -->
+       <div id="dropZone" class="w-[50%] h-[250px] rounded-2xl bg-white flex flex-col items-center gap-12 p-4">
+            <h3 class="text-3xl font-bold">Drop Zone</h3>
+        </div>
+       </div>
+    </div>
+    </div>
+    <script src="./toDo.js"></script>
+</body>
+</html>

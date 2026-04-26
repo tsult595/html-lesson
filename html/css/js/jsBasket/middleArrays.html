@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const numbers = [23, 45, 12, 67, 34, 89, 21, 55];
+        let max =0
+        for(let i=0;i<numbers.length;i++){
+           if(numbers[i] > max){
+            max = numbers[i]
+           }
+           }
+           console.log(max);
+           
+        
+
+        let str = "Hello World From Baku Azerbaijan";
+        let res = ''
+        for(let i=0;i<str.length;i++){
+         if(str[i] !== ' '){
+          res += str[i]
+         }
+        }
+        console.log(res);
+
+      const numbers1 = [2, 3, 8, 7, 1, 9, 4, 6];
+      let sum = [];
+
+     for (let i = 0; i < numbers1.length; i++) {
+      for (let j = i + 1; j < numbers1.length; j++) { 
+        if (numbers1[i] + numbers1[j] === 10) {
+            sum.push([numbers1[i], numbers1[j]]);
+        }
+     }
+   }
+
+console.log(sum);
+
+
+const arr1 = [23, 45, 12, 67, 34, 89, 21, 55, 100, 77];
+
+let max1 = -Infinity;   // первый максимум
+let max2 = -Infinity;   // второй максимум
+
+for(let i = 0; i < arr1.length; i++) {
+    if(arr1[i] > max1) {
+        // если нашли число больше max1 — сдвигаем значения
+        max2 = max1;
+        max1 = arr1[i];
+    } 
+    else if(arr1[i] > max2 && arr1[i] < max1) {
+        // если число меньше max1, но больше max2
+        max2 = arr1[i];
+    }
+}
+
+console.log("Самое большое:", max1);   // 100
+console.log("Второе самое большое:", max2); // 89
+
+
+
+const arr2 = [23, 45, 12 , 67, 34];
+
+
+for(let i = 0; i < arr2.length; i++) {
+    for(let j = i + 1; j < arr2.length; j++) {
+    //    console.log(`Сравниваем ${i} и ${j}`);
+       console.log(`Сравниваем ${arr2[i]} и ${arr2[j]}`);
+    //    if(arr2[i] <= arr2[j]){
+    //    let temp = arr2[i]
+    //    arr2[i] = arr2[j]
+    //    arr2[j] = temp
+    //    }
+    }
+}
+console.log(arr2);
+
+
+ let yemex = [
+          
+            {
+                "id": 5,
+                "img": "../../best-free-travel-images-main-image-hd-op.jpg",
+                "category": "Pizzalar",
+                "userOrders" : 0,
+                "name": "Meksika",
+                "composition": "Qril Toyuq, Pomidor, Göbələk, Yaşıl Bibər, Halapenyo Bibəri, Mozzarella Pendiri",
+                "price": 14
+            },
+            {
+                "id": 9,
+                "img": "https://imageproxy.wolt.com/menu/menu-images/5f31066a051911465b2444dd/f3b2a7de-dafc-11ea-99b7-827e57abefd7_kar_s__k_pide.jpeg?w=600",
+                "category": "Pidelər",
+                "userOrders" : 0,
+                "name": "Qarışıq Pide",
+                "composition": "Kiçik hissələrə bölünmüş dana filesi, dana və quzu qiyməsi, bibər, soğan, pomidor, kaşar pendiri, sucuq, yumurta, kərə yağı",
+                "price": 40
+            },
+            {
+                "id": 10,
+                "img": "https://imageproxy.wolt.com/menu/menu-images/5f31066a051911465b2444dd/7d726cac-db0c-11ea-ad72-826c824a2093_adana_iskender_kebap.jpeg?w=600",
+                "category": "Kabablar",
+                "userOrders" : 0,
+                "name": "Adana İskender Kabab",
+                "composition": "180 q dana və quzu qiyməsi, közdə acı bibər və pomidor, 'İsgəndər dönər' sousu",
+                "price": 21
+            },
+          
+        ]
+
+    let yem = yemex.map((yem)=>{
+        console.log(yem.composition);
+        
+    })
+
+        
+
+    </script>
+</body>
+</html>

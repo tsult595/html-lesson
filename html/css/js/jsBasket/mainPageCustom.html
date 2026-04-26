@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        }
+        .all{
+            width: 100%;
+            height: 100vh;
+            
+        }
+        .header{
+            width: 80%;
+            margin: 0 auto;
+            background-color: aquamarine;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        
+        }
+        .nav{
+            display: flex;
+            gap: 15px;
+        }
+        .cardSection{
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        .cardWrapper{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card{
+
+            border-radius: 5px;
+        }
+    
+    </style>
+</head>
+<body>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+     <div class="all">
+        <div class="header">
+            <h1>LoGO</h1>
+         <div class="nav">
+            <span>HOME</span>
+            <span>HOME</span>
+            <span>HOME</span>
+            <span>HOME</span>
+         </div>
+        </div>
+        <div class="cardSection">
+         <input oninput="priceFinder()" min="0" max="40" id="priceInp" type="range" type="text">
+         <input oninput="searchFinder()" id="searchInp" type="text">
+         <select onchange="sortFinder()" name="select" id="selectInp">
+            <option value="low">Price Low</option>
+            <option value="high">Price High</option>
+            <option value="moreFifty">More 50</option>
+            <option value="lessFifty">Less 50</option>
+         </select>
+         <p id="showPriceVal"></p>
+
+         <div class="cardWrapper">
+
+         </div>
+
+        </div>
+
+     </div>
+    <script>
+     let yemex = [
+            {
+                "id": 1,
+                "img": "https://imageproxy.wolt.com/menu/menu-images/5f31066a051911465b2444dd/b5b0ff72-dafb-11ea-98f9-da3a1e599769_k_ymal__pide.jpeg?w=600",
+                "category": "Pidelər",
+                "name": "Kaşarlı Quşbaşı Pide",
+                "composition": "Kiçik hissələrə bölünmüş dana filesi, bibər,  soğan, pomidor, kərə yağı, kaşar pendiri",
+                "price": 15
+            },
+            {
+                "id": 2,
+                "img": "../../image (1).webp",
+                "category": "Pizzalar",
+                "name": "Çiken Barbekyu",
+                "composition": "Qril Toyuq, Göbələk, Barbekyu Sousu, Mozzarella Pendiri",
+                "price": 10
+            },
+            {
+                "id": 3,
+                "img": "../../mobile_az_2.webp",
+                "category": "Pizzalar",
+                "name": "Cheddar Çiken Club",
+                "composition": "Qril toyuğu, Pomidor, Vetçina, Mozzarella, Cheddar, Ranç sousu",
+                "price": 12
+            },
+            {
+                "id": 4,
+                "img": "https://imageproxy.wolt.com/menu/menu-images/5f31066a051911465b2444dd/110c1568-db07-11ea-91ae-ea279f353787_adana_kebap..jpeg?w=600",
+                "category": "Kabablar",
+                "name": "Adana Kabab",
+                "composition": "180 q dana və quzu qiyməsi, közdə pomidor və acı bibər, sumaqlı soğan, bulqur/düyü",
+                "price": 19
+            },
+            {
+                "id": 5,
+                "img": "../../best-free-travel-images-main-image-hd-op.jpg",
+                "category": "Pizzalar",
+                "name": "Meksika",
+                "composition": "Qril Toyuq, Pomidor, Göbələk, Yaşıl Bibər, Halapenyo Bibəri, Mozzarella Pendiri",
+                "price": 14
+            },
+            {
+                "id": 6,
+                "img": "https://imageproxy.wolt.com/menu/menu-images/5f31066a051911465b2444dd/30c7e508-db07-11ea-8a76-1a2f8378f118_urfa_kebap...jpeg?w=600",
+                "category": "Kabablar",
+                "name": "Urfa Kabab",
+                "composition": "180 q dana və quzu qiyməsi, közdə pomidor və acı bibər, sumaqlı soğan, bulqur/düyü",
+                "price": 19
+            },
+            {
+                "id": 7,
+                "img": "../../beans-left-hand.png",
+                "category": "Pizzalar",
+                "name": "Qarışıq Ət",
+                "composition": "Pomidor, Oreqano, Mozzarella Pendiri",
+                "price": 15
+            },
+            {
+                "id": 8,
+                "img": "https://imageproxy.wolt.com/menu/menu-images/5f31066a051911465b2444dd/eef56fb0-db06-11ea-8424-02c139339d10_naml__kebap_kar_s__k.jpeg?w=600",
+                "category": "Kabablar",
+                "name": "Qarışıq Namlı Kabab",
+                "composition": "Adana kababı, urfa kababı, quzu şiş, toyuq şiş, dönər əti, 1 ədəd fındıq lahmacun;  közdə pomidor, acı bibər, bulqur/düyü, sumaqlı soğan",
+                "price": 33
+            },
+            {
+                "id": 9,
+                "img": "https://imageproxy.wolt.com/menu/menu-images/5f31066a051911465b2444dd/f3b2a7de-dafc-11ea-99b7-827e57abefd7_kar_s__k_pide.jpeg?w=600",
+                "category": "Pidelər",
+                "name": "Qarışıq Pide",
+                "composition": "Kiçik hissələrə bölünmüş dana filesi, dana və quzu qiyməsi, bibər, soğan, pomidor, kaşar pendiri, sucuq, yumurta, kərə yağı",
+                "price": 40
+            },
+            {
+                "id": 10,
+                "img": "https://imageproxy.wolt.com/menu/menu-images/5f31066a051911465b2444dd/7d726cac-db0c-11ea-ad72-826c824a2093_adana_iskender_kebap.jpeg?w=600",
+                "category": "Kabablar",
+                "name": "Adana İskender Kabab",
+                "composition": "180 q dana və quzu qiyməsi, közdə acı bibər və pomidor, 'İsgəndər dönər' sousu",
+                "price": 21
+            },
+            {
+                "id": 11,
+                "img": "../../beans-scoop.png",
+                "category": "Pizzalar",
+                "name": "Çiken Barbekyu",
+                "composition": "Qril Toyuq, Göbələk, Barbekyu Sousu, Mozzarella Pendiri",
+                "price": 10
+            },
+            {
+                "id": 12,
+                "img": "https://imageproxy.wolt.com/menu/menu-images/5f31066a051911465b2444dd/7db30926-dafb-11ea-aff5-fa3509a85019_kas_arl__pide..jpeg?w=600",
+                "category": "Pidelər",
+                "name": "Kaşarlı Pide",
+                "composition": "Kaşar pendiri, kərə yağı",
+                "price": 11
+            },
+            {
+                "id": 13,
+                "img": "https://imageproxy.wolt.com/menu/menu-images/5f31066a051911465b2444dd/7db30926-dafb-11ea-aff5-fa3509a85019_kas_arl__pide..jpeg?w=600",
+                "category": "Pidelər",
+                "name": "Kaşarlı Pide",
+                "composition": "Kaşar pendiri, kərə yağı",
+                "price": 11
+            },
+            {
+                "id": 14,
+                "img": "https://imageproxy.wolt.com/menu/menu-images/5f31066a051911465b2444dd/b5b0ff72-dafb-11ea-98f9-da3a1e599769_k_ymal__pide.jpeg?w=600",
+                "category": "Pidelər",
+                "name": "Qiyməli Pide",
+                "composition": "Dana və quzu qiyməsi, bibər, soğan, pomidor,  kərə yağı",
+                "price": 12
+            }
+        ]
+
+    const yemexWrapper = document.querySelector('.cardWrapper');
+    const priceInp = document.querySelector('#priceInp');
+    const showPriceVal = document.querySelector('#showPriceVal');
+    const searchInp = document.querySelector('#searchInp');
+    const selectInp = document.querySelector('#selectInp');
+
+    // Главная функция рендера
+    function render(filteredItems) {
+        yemexWrapper.innerHTML = '';
+
+        if (filteredItems.length === 0) {
+            yemexWrapper.innerHTML = `<p class="text-center mt-5">Ничего не найдено</p>`;
+            return;
+        }
+
+        filteredItems.forEach(item => {
+            yemexWrapper.innerHTML += `
+                <div class="card" style="width: 18rem;">
+                    <img src="${item.img}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${item.name}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">${item.category}</h6>
+                        <p class="card-text">${item.composition}</p>
+                        <a href="#" class="btn btn-primary">${item.price} AZN</a>
+                    </div>
+                </div>
+            `;
+        });
+    }
+
+    function applyFilters() {
+        let filtered = yemex;
+        const searchValue = searchInp.value.toLowerCase().trim();
+        if (searchValue) {
+            filtered = filtered.filter(item => 
+                item.name.toLowerCase().includes(searchValue) ||
+                item.category.toLowerCase().includes(searchValue) ||
+                item.composition.toLowerCase().includes(searchValue)
+            );
+        }
+
+        const maxPrice = Number(priceInp.value);
+        showPriceVal.textContent = `${maxPrice} AZN`;
+        filtered = filtered.filter(item => item.price <= maxPrice);
+
+
+        const sortType = selectInp.value;
+
+        if (sortType === 'low') {
+            filtered.sort((a, b) => a.price - b.price);
+        } else if (sortType === 'high') {
+            filtered.sort((a, b) => b.price - a.price);
+        } else if (sortType === 'moreFifty') {
+            filtered = filtered.filter(item => item.price > 10);
+        } else if (sortType === 'lessFifty') {
+            filtered = filtered.filter(item => item.price <= 40);
+        }
+
+        render(filtered);
+    }
+
+    
+    function priceFinder() {
+        applyFilters();
+    }
+
+    function searchFinder() {
+        applyFilters();
+    }
+
+    function sortFinder() {
+        applyFilters();
+    }
+
+
+    render(yemex);
+        
+    </script>
+</body>
+</html>

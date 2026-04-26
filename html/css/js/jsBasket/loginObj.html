@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+            font-family: Arial, sans-serif;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 30px;
+            border-collapse: collapse;
+            background: #f9f9f9;
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        table tr:hover {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Registration</h1>
+
+        <div class="form-group">
+            <label for="ad">Ad</label>
+            <input type="text" id="ad" name="ad" required>
+        </div>
+
+        <div class="form-group">
+            <label for="soyad">Soyad</label>
+            <input type="text" id="soyad" name="soyad" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <button type="button" onclick="objMaker()">Register</button>
+        <table id="table">
+            <thead>
+                <tr>
+                  
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let ad = document.querySelector('#ad')
+        let soyad = document.querySelector('#soyad')
+        let email = document.querySelector('#email')
+        let tableBody = document.querySelector('#tableBody')
+        let arr = []
+
+        
+        const objMaker = function () {
+            if (ad.value === '' || soyad.value === '' || email.value === '') {
+                alert('Please fill all fields!')
+                return
+            }
+            
+            let object = {
+                ad: ad.value,
+                soyad: soyad.value,
+                email: email.value
+            }
+            arr.push(object)
+            
+            // Clear inputs
+            ad.value = ''
+            soyad.value = ''
+            email.value = ''
+            
+            render()
+        }
+
+        const render = function(){
+          tableBody.innerHTML = ''  
+          arr.map((item)=>{
+            tableBody.innerHTML += `<tr>
+            <td>${item.ad}</td>
+            <td>${item.soyad}</td>
+            <td>${item.email}</td>
+            </tr>`
+          })
+        }
+        
+    </script>
+</body>
+
+</html>

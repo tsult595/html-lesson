@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="flex justify-center items-center bg-blue-100 min-h-screen">
+       <div class="flex items-center justify-center gap-7">
+        <button onclick="leftClick()" id="left"><i class="fas fa-arrow-left"></i></button>
+        <div id="img" class="flex flex-col items-center w-[50%] h-[60%]">
+        <!-- <img class="w-full h-full object-cover" src="../1.svg" alt=""> -->
+         <p class="text-black" id="counter"></p>
+        </div>
+        <button onclick="rightClick()" id="right"><i class="fas fa-arrow-right"></i></button>
+       </div>
+    </div>
+    <script src="./slider.js"></script>
+</body>
+</html>

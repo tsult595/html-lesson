@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        }
+
+
+    </style>
+</head>
+<body>
+    <span id="string"></span>
+
+    <script>
+        let string = document.querySelector('#string')
+        let text = 'Privet Tima'
+        for(let i=0;i <text.length;i++){
+            setTimeout(()=>{
+            string.innerHTML += `<span>${text[i]}</span>`
+            },400 * (i+1))
+            }
+        for(let i = 0; i < text.length; i++){
+    setTimeout(()=>{
+        let content = string.innerHTML
+        string.innerHTML = content.slice(0, content.lastIndexOf('<span>'))
+     }, 400 * (text.length + i + 1))
+        }    
+
+        
+
+    
+    </script>
+</body>
+</html>

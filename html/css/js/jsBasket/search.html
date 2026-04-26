@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input oninput="see()" id="inp" type="text">
+       <ul id="ul">
+       </ul>
+       <input id="inp1" type="text">
+       <button onclick="beforeBtn()" id="before">add before</button>
+       <button onclick="afterBtn()" id="after">add after</button>
+       <input id="inp2" type="text">
+       <span id="text"></span>
+    </div>
+     <script>
+        let stroka = "JavaScript"
+        let howMuch = 0
+        for(let i=0; i<stroka.length;i++){
+         if(stroka[i] === 'a' ||stroka[i] === 'A'){
+          howMuch++
+         }
+        }
+        console.log(howMuch);
+
+        const nums = [23, 45, 12, 67, 34, 89, 21];
+
+        let prev = nums[0]
+        for(let i=0;i<nums.length;i++){
+         if(nums[i] > prev){
+          prev = nums[i]
+         }
+        }
+        console.log(prev);
+
+        const nums1 = [23, 45, 12, 67, 34, 89, 21];
+        let total = 0
+        for(let i =0; i< nums1.length;i++ ){
+          total += nums1[i]
+        }
+        console.log(total);
+
+        const nums3 = [5, 12, 8, 20, 3, 15, 7, 25];
+        
+        let news = []
+        for(let i = 0;i<nums3.length; i++){
+         if(nums3[i] > 10){
+            news.push(nums3[i])
+         }
+        }
+        console.log(news);
+
+        let str = "Hello World From Baku Azerbaijan";
+
+        let newStr = ''
+
+        for(let i = 0; i < str.length; i++){   
+         if(str[i] !== ' '){
+          newStr += str[i]
+          
+         }
+        }
+        console.log(newStr);
+
+        const nums4 = [2, 3, 8, 7, 1, 9, 4, 6];
+        let pairs = []
+        for(let i = 0; i < nums4.length; i++){
+         for(let j=0; j< nums4.length; j++){
+            if(nums4[i] + nums4[j] === 10){
+            pairs.push([nums4[i], nums4[j]])
+            }
+         }
+        }
+        console.log(pairs);
+        
+
+      const nums5 = [23, 45, 12, 67, 34, 89, 21, 55];
+
+    for (let i = 0; i < nums5.length; i++) {
+    for (let j = i + 1; j < nums5.length; j++) {
+        if (nums5[i] < nums5[j]) {
+            // Меняем местами
+            let temp = nums5[i];
+            nums5[i] = nums5[j];
+            nums5[j] = temp;
+        }
+    }
+}
+
+console.log("Отсортировано по убыванию:", nums5);
+console.log("Второе самое большое:", nums5[1]); // 67
+
+
+      function arasi(a,b){
+      for(let i =0 ; i <= b-a ;i++){
+       if((a+i) % 2 == 0){
+        console.log(a+i);
+       }
+      }
+      }
+
+      console.log(arasi(5,15));
+     let inp1 = document.querySelector('#inp1')
+     let inp2 = document.querySelector('#inp2')
+     let after = document.querySelector('#after')
+     let before = document.querySelector('#before')
+     let text = document.querySelector('#text')
+     
+      
+      
+      let newArr = []
+
+     
+
+   function render(){
+    text.innerHTML = ''
+    for(let i = 0; i < newArr.length; i++){
+    text.innerHTML += `<span>${newArr[i]}</span>`
+    }
+   }
+
+ function beforeBtn(){
+    newArr.unshift(inp1.value)
+    inp1.value = ''
+    render()
+}
+
+function afterBtn(){
+    newArr.push(inp2.value)
+    inp2.value = ''
+    render()
+}
+
+let arr = ["Go", "Javascript", "Phyton", "NodeJs", "React", "Bootstrap"]
+
+let newss = ''
+
+for(let i = 0; i < arr.length; i++){
+  newss += arr[i] 
+
+  if(i < arr.length - 1){
+    newss += '**'
+  }
+}
+
+console.log(newss)
+
+let arrs = ["php", "php", "css", "css","script", "script" , "html", "html" , "java"]
+
+let dubl = []
+for(let i = 0; i < arrs.length; i++){
+  for(let j=i+1; j<arrs.length;j++){
+    if(arrs[i] === arrs[j]){
+     dubl.push(arrs[i])
+     arrs.splice(j, 1)
+      j--
+     
+    }
+  }
+}
+ console.log(dubl);
+
+
+const nums6 = [23, 45, 12, 67, 34, 89, 21, 55];
+let ss = []
+for(let i = 0; i < nums6.length; i++) {
+   for(let j = i+1; j < nums6.length; j++){
+    if(nums6[i] === nums6[j]){
+     ss.push(nums6[i])
+     nums6.splice(j,1)
+     j--
+    }
+   }
+}
+ 
+
+const nums7 = [23, 45, 12, 67, 34, 89, 21, 55];
+for(let i =0; i<nums7.length;i++){
+   for(let j =i+1; j<nums7.length;j++){
+    if(nums7[i] > nums7[j]){
+    let temp = nums7[i]
+    nums7[i] = nums7[j]
+    nums7[j] = temp
+    }
+   }
+}
+console.log(nums7);
+
+
+
+
+
+
+
+
+
+
+
+      
+      
+       
+       
+       
+        
+    </script>
+</body>
+</html>

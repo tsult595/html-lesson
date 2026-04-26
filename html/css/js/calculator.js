@@ -57,8 +57,8 @@ function yoxlaTwo(){
     let  inpThreeVal = Number(inpThree.value) 
     let allVall = [inpOneVal , inpTwoVal , inpThreeVal]
     
-    let whoMore = allVall.reduce((acc , e)=> acc < e? acc : e)  // минимум
-    let whoLess = allVall.reduce((acc , e)=> acc > e? acc : e)  // максимум
+    let whoMore = allVall.reduce((acc , e)=> acc < e? acc : e)  
+    let whoLess = allVall.reduce((acc , e)=> acc > e? acc : e) 
    
     enBoyukP.innerHTML = `eto bolwe ${whoMore}`
     enBalacaP.innerHTML = `eto menwe ${whoLess}`

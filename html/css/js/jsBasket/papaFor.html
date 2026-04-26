@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav class="navbar bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+
+            <!-- LEFT: Search + Select -->
+            <form class="d-flex gap-2">
+                <input id="search" oninput="searchFinder()" class="form-control" type="search" placeholder="Search">
+
+                <select onchange="weSort()" id="form-select">
+                   
+                
+                </select>
+
+                <button class="btn btn-outline-success">Search</button>
+            </form>
+
+            <!-- RIGHT: Burger -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#drawer">
+                <span id="cart-elements-count"></span>
+                <!-- <span class="navbar-toggler-icon"></span> -->
+                <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          
+        </div>
+    </nav>
+
+    <!-- DRAWER -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="drawer">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Cart</h5>
+            <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <span id="cart-elements"></span>
+            <p id="cart-total">0</p>
+            
+            
+            
+        </div>
+    </div>
+    <div id="container" class="d-flex align-items-center justify-content-center flex-wrap gap-5"></div>
+    <script>
+         const data = {
+            "data": {
+                "category": [
+                    "Bütün",
+                    "Pidelər",
+                    "Pizzalar",
+                    "Kabablar"
+                ],
+                "food": [
+                    {
+                        "id": 1,
+                        "img": "https://imageproxy.wolt.com/menu/menu-images/5f31066a051911465b2444dd/b5b0ff72-dafb-11ea-98f9-da3a1e599769_k_ymal__pide.jpeg?w=600",
+                        "category": "Pidelər",
+                        "name": "Kaşarlı Quşbaşı Pide",
+                        "composition": "Kiçik hissələrə bölünmüş dana filesi, bibər,  soğan, pomidor, kərə yağı, kaşar pendiri",
+                        "price": 15,
+                        "quantity" : 3
+                    },
+                    {
+                        "id": 2,
+                        "img": "https://imageproxy.wolt.com/menu/menu-images/60c65d7a-3e7c-11ea-8f5b-0a586471b4bf_13-chiken-barbekyu.jpeg?w=600",
+                        "category": "Pizzalar",
+                        "name": "Çiken Barbekyu",
+                        "composition": "Qril Toyuq, Göbələk, Barbekyu Sousu, Mozzarella Pendiri",
+                        "price": 10,
+                        "quantity" : 3
+                    },
+                    {
+                        "id": 3,
+                        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ90JoNdSCmO37-4N9ek62GjXmIW-XUkEs-rw&s",
+                        "category": "Pizzalar",
+                        "name": "Cheddar Çiken Club",
+                        "composition": "Qril toyuğu, Pomidor, Vetçina, Mozzarella, Cheddar, Ranç sousu",
+                        "price": 12,
+                        "quantity" : 3
+                    },
+                    {
+                        "id": 4,
+                        "img": "https://imageproxy.wolt.com/menu/menu-images/5f31066a051911465b2444dd/110c1568-db07-11ea-91ae-ea279f353787_adana_kebap..jpeg?w=600",
+                        "category": "Kabablar",
+                        "name": "Adana Kabab",
+                        "composition": "180 q dana və quzu qiyməsi, közdə pomidor və acı bibər, sumaqlı soğan, bulqur/düyü",
+                        "price": 19,
+                        "quantity" : 3
+                    },
+                    {
+                        "id": 5,
+                        "img": "https://imageproxy.wolt.com/menu/menu-images/7e237064-3e8c-11ea-a723-0a5864733252_7-Qarishiq-et.jpeg?w=600",
+                        "category": "Pizzalar",
+                        "name": "Meksika",
+                        "composition": "Qril Toyuq, Pomidor, Göbələk, Yaşıl Bibər, Halapenyo Bibəri, Mozzarella Pendiri",
+                        "price": 14,
+                        "quantity" : 3
+                    },
+                    {
+                        "id": 6,
+                        "img": "https://imageproxy.wolt.com/menu/menu-images/5f31066a051911465b2444dd/30c7e508-db07-11ea-8a76-1a2f8378f118_urfa_kebap...jpeg?w=600",
+                        "category": "Kabablar",
+                        "name": "Urfa Kabab",
+                        "composition": "180 q dana və quzu qiyməsi, közdə pomidor və acı bibər, sumaqlı soğan, bulqur/düyü",
+                        "price": 19,
+                        "quantity" : 3
+                    },
+                    {
+                        "id": 7,
+                        "img": "https://imageproxy.wolt.com/menu/menu-images/7e237064-3e8c-11ea-a723-0a5864733252_7-Qarishiq-et.jpeg?w=600",
+                        "category": "Pizzalar",
+                        "name": "Qarışıq Ət",
+                        "composition": "Pomidor, Oreqano, Mozzarella Pendiri",
+                        "price": 15,
+                        "quantity" : 3
+                    },
+                    {
+                        "id": 8,
+                        "img": "https://imageproxy.wolt.com/menu/menu-images/5f31066a051911465b2444dd/eef56fb0-db06-11ea-8424-02c139339d10_naml__kebap_kar_s__k.jpeg?w=600",
+                        "category": "Kabablar",
+                        "name": "Qarışıq Namlı Kabab",
+                        "composition": "Adana kababı, urfa kababı, quzu şiş, toyuq şiş, dönər əti, 1 ədəd fındıq lahmacun;  közdə pomidor, acı bibər, bulqur/düyü, sumaqlı soğan",
+                        "price": 33,
+                        "quantity" : 3
+                    },
+                    {
+                        "id": 9,
+                        "img": "https://imageproxy.wolt.com/menu/menu-images/5f31066a051911465b2444dd/f3b2a7de-dafc-11ea-99b7-827e57abefd7_kar_s__k_pide.jpeg?w=600",
+                        "category": "Pidelər",
+                        "name": "Qarışıq Pide",
+                        "composition": "Kiçik hissələrə bölünmüş dana filesi, dana və quzu qiyməsi, bibər, soğan, pomidor, kaşar pendiri, sucuq, yumurta, kərə yağı",
+                        "price": 15,
+                        "quantity" : 3
+                    },
+                    {
+                        "id": 10,
+                        "img": "https://imageproxy.wolt.com/menu/menu-images/5f31066a051911465b2444dd/7d726cac-db0c-11ea-ad72-826c824a2093_adana_iskender_kebap.jpeg?w=600",
+                        "category": "Kabablar",
+                        "name": "Adana İskender Kabab",
+                        "composition": "180 q dana və quzu qiyməsi, közdə acı bibər və pomidor, 'İsgəndər dönər' sousu",
+                        "price": 21,
+                        "quantity" : 3
+                    },
+                    {
+                        "id": 11,
+                        "img": "https://imageproxy.wolt.com/menu/menu-images/60c65d7a-3e7c-11ea-8f5b-0a586471b4bf_13-chiken-barbekyu.jpeg?w=600",
+                        "category": "Pizzalar",
+                        "name": "Çiken Barbekyu",
+                        "composition": "Qril Toyuq, Göbələk, Barbekyu Sousu, Mozzarella Pendiri",
+                        "price": 10,
+                        "quantity" : 3
+                    },
+                    {
+                        "id": 12,
+                        "img": "https://imageproxy.wolt.com/menu/menu-images/5f31066a051911465b2444dd/7db30926-dafb-11ea-aff5-fa3509a85019_kas_arl__pide..jpeg?w=600",
+                        "category": "Pidelər",
+                        "name": "Kaşarlı Pide",
+                        "composition": "Kaşar pendiri, kərə yağı",
+                        "price": 11,
+                        "quantity" : 3
+                    },
+                    {
+                        "id": 13,
+                        "img": "https://imageproxy.wolt.com/menu/menu-images/5f31066a051911465b2444dd/7db30926-dafb-11ea-aff5-fa3509a85019_kas_arl__pide..jpeg?w=600",
+                        "category": "Pidelər",
+                        "name": "Kaşarlı Pide",
+                        "composition": "Kaşar pendiri, kərə yağı",
+                        "price": 11,
+                        "quantity" : 3
+                    },
+                    {
+                        "id": 14,
+                        "img": "https://imageproxy.wolt.com/menu/menu-images/5f31066a051911465b2444dd/b5b0ff72-dafb-11ea-98f9-da3a1e599769_k_ymal__pide.jpeg?w=600",
+                        "category": "Pidelər",
+                        "name": "Qiyməli Pide",
+                        "composition": "Dana və quzu qiyməsi, bibər, soğan, pomidor,  kərə yağı",
+                        "price": 12,
+                        "quantity" : 3
+                    }
+                ]
+            }
+        }
+
+        const display = document.querySelector("#container");
+        const count = document.querySelector("#cart-elements-count")
+        const cartDrwaer = document.querySelector("#cart-elements"); 
+        const cartCount = document.querySelector("#cart-total")
+        const search = document.querySelector("#search")
+        const formSelect = document.querySelector('#form-select')
+
+    let card = []
+
+    function renderCards(products) {
+        display.innerHTML = ""; 
+        products.forEach((item) => {
+            display.innerHTML += `
+                <div class="card" style="width: 18rem;">
+                    <img src="${item.img}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${item.name}</h5>
+                        <p class="card-text">${item.composition}</p>
+                        <p class="badge bg-secondary">${item.category}</p>
+                        <br>
+                        <button class="btn btn-primary" onclick="addToCard(${item.id})">
+                            ${item.price} AZN
+                        </button>
+                    </div>
+                </div>`;
+        });
+    }
+
+    function renderCart() {
+        cartDrwaer.innerHTML = ''
+        count.innerText = card.length
+        let total = 0
+        
+        card.forEach(product => {
+            total += product.price * product.quantity
+            cartDrwaer.innerHTML += `
+                <div class="card mb-3" style="max-width: 540px;" id="cart-item-${product.id}">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="${product.img}" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">${product.name}</h5>
+                                <p class="card-text">${product.composition}, ${product.category}</p>
+                                <p class="card-text"><small class="text-muted">${product.price}AZN</small></p>
+                                <button onclick="plus(${product.id})">+</button>
+                                <span id="qty-${product.id}">${product.quantity}</span>
+                                <button onclick="minus(${product.id})">-</button>
+                                <button onclick="deleteItem(${product.id})">delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>` 
+        })
+        cartCount.innerHTML = total
+    }
+
+    renderCards(data.data.food);
+
+    function searchFinder() {
+        const query = search.value.toLowerCase();
+        const filteredFood = data.data.food.filter(item => {
+            return item.name.toLowerCase().includes(query) || 
+                   item.category.toLowerCase().includes(query);
+        });
+        renderCards(filteredFood);
+    }
+
+    const addToCard = function(i){
+        let find = card.find(item => item.id === i)
+        if(find){
+            find.quantity++
+        } else {
+            let item = data.data.food.find(item => item.id === i)
+            card.push({...item, quantity: 1})
+        }
+        renderCart()  
+    }
+
+    const plus = function(i){
+        let item = card.find(el => el.id === i)
+        if(item && item.quantity < item.quantity){
+            item.quantity++
+            renderCart()
+        }
+    }
+
+    const minus = function(i){
+        let item = card.find(el => el.id === i)
+        if(item && item.quantity > 1){
+            item.quantity--
+            renderCart()
+        }
+    }
+
+    const deleteItem = function(i){
+        card = card.filter(item => item.id !== i)
+        renderCart()
+    }
+
+    function weSort(){
+        const selectedCategory = formSelect.value
+        if(!selectedCategory || selectedCategory === "Bütün"){
+            renderCards(data.data.food)
+        } else {
+            let filtered = data.data.food.filter(item => item.category === selectedCategory)
+            renderCards(filtered)
+        }
+    }
+
+    // Populate category options
+    formSelect.innerHTML += '<option value="">All Categories</option>'
+    data.data.category.forEach(cat => {
+        if(cat !== "Bütün"){
+            formSelect.innerHTML += `<option value="${cat}">${cat}</option>`
+        }
+    })
+
+  
+   
+
+
+
+    </script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>        
